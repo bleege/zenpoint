@@ -20,9 +20,12 @@
 
 <script>
   // Add a map to the 'map' div
-  var map = L.Mapzen.map('map');
-  // Set the center of the map to be the San Francisco Bay Area at zoom level 12
-  map.setView([37.7749, -122.4194], 12);
+  var map = L.Mapzen.map('map', {
+  	center: [43.07471879831505, -89.3842077255249],
+  	zoom: 14,
+  	scene: L.Mapzen.BasemapStyles.BubbleWrap
+  });
+
 </script>
 
 </body>
