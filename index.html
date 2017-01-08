@@ -40,6 +40,11 @@
   });
   marker.addTo(map);
 
+  map.on('dblclick', function(event) {
+  	var position = event.latlng;
+  	marker.setLatLng(position).bindPopup("Lat/Lon = " + position.lat + ", " + position.lng).openPopup();
+  });
+
   L.control.geocoder('mapzen-GcCJhmx').addTo(map);
 
 </script>
