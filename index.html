@@ -32,6 +32,12 @@
   var marker = L.marker([43.07471879831505, -89.3842077255249], {
 		draggable: true
 	});
+  marker.on('dragend', function(event) {
+  	var marker = event.target;
+    var position = marker.getLatLng();
+//    console.log(position);
+    marker.bindPopup("Lat/Lon = " + position.lat + ", " + position.lng).openPopup();
+  });
   marker.addTo(map);
 
   L.control.geocoder('mapzen-GcCJhmx').addTo(map);
